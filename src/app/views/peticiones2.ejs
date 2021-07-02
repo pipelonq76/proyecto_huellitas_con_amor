@@ -206,7 +206,7 @@
 
 								<% if (rol == "administrador") {%>
 
-								<button type="button" class="btn btn-danger" style="margin: 0px 0px 30px 0px;" data-toggle="modal" data-target="#ModalBorrar<%=adoptante[i].id_adoptante %>">Eliminar peticion</button>
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalBorrar<%=adoptante[i].id_adoptante %>">Eliminar peticion</button>
 
 								<div class="modal fade" id="ModalBorrar<%=adoptante[i].id_adoptante %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  								<div class="modal-dialog" role="document">
@@ -222,7 +222,7 @@
 	      									</div>
 	      									<div class="modal-footer">
 	        									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	           									<a href="delete3/<%=adoptante[i].id_adoptante %>" class="btn btn-danger">Aceptar</a>
+	           									<a href="delete3/<%=adoptante[i].id_adoptante %>" class="btn btn-primary">Aceptar</a>
 				      						</div>
 									   </div>
 									 </div>

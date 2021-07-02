@@ -1,10 +1,11 @@
 .fotos {
-	padding-top: 10px;
+	padding-top: 0px;
+	margin: 0px;
 
 }
 .contenedor {
-	margin: 50px;
-	padding: 100px;
+	margin: 50px 0px -10px 0px;
+	padding: 0px;
 	border-width: 10px;
 	border-color: black;
 	border-style: solid;
@@ -33,6 +34,7 @@
 .titulo3-name {
 	font-family: titulo3;
 	font-size: 40px;
+	margin: 30px;
 }
 @font-face{
 	font-family: titulo;

@@ -145,11 +145,13 @@
 						<div class="service-wrap text-center lastchild clearfix">
 								<% for (let i = 0; i < adopcion.length; i++) { %>
 								<div class="contenedor">
-							<div class="fotos">
-									<img src="<%= adopcion[i].foto_mascota %>"> 
-								</div>
+						
 								
 								<h2 class="titulo3-name"><strong><%= adopcion[i].nombre_mascota %></strong></h2>
+
+									<div class="container">
+									<img src="<%= adopcion[i].foto_mascota %>"> 
+								</div>
 								
 								<h2 class="titulo3">
 									<p><strong>Raza de la mascota</strong></p>
@@ -166,7 +168,7 @@
 								<% if (rol == "administrador") {%>
 
 					
-								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalBorrar<%= adopcion[i].Id_mascotas %>">Borrar a <%=adopcion[i].nombre_mascota%></button>
+								<button style="margin: 30px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalBorrar<%= adopcion[i].Id_mascotas %>">Borrar a <%=adopcion[i].nombre_mascota%></button>
 
 
 								<div class="modal fade" id="ModalBorrar<%= adopcion[i].Id_mascotas %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -183,11 +185,12 @@
 	      									</div>
 	      									<div class="modal-footer">
 	        									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	           									<a href="delete/<%=adopcion[i].Id_mascotas %>" class="btn btn-danger">Aceptar</a>
+	           									<a  href="delete/<%=adopcion[i].Id_mascotas %>" class="btn btn-danger">Aceptar</a>
 				      						</div>
 									   </div>
 									 </div>
 								</div>
+							
 
 
 								
@@ -196,7 +199,7 @@
 								<% if (login) { %>
 								<a class="btn btn-light btn-radius btn-brd grd1 effect-1" href="/formulario_adopcion_mascota">Adoptar a <%= adopcion[i].nombre_mascota %></a>
 								<% } else { %>
-					<a class="btn btn-light btn-radius btn-brd grd1 effect-1" href="/login2">Inicia sesion para adoptar a <%=adopcion[i].nombre_mascota%></a>
+					<a class="btn btn-light btn-radius btn-brd grd1 effect-1" style="margin: 0px 0px 30px 0px;" href="/login2">Inicia sesion para adoptar a <%=adopcion[i].nombre_mascota%></a>
 					<% } %>
 									</div>
 									<% } %>

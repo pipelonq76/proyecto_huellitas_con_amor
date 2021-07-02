@@ -270,7 +270,7 @@ body.barber_version hr.invis4 {
 }
 
 body.barber_version .service-wrap {
-    margin: 30px 0;
+    margin: -60px 0px 0px;
 	padding: 20px;
     display: block;
     position: relative;
@@ -294,7 +294,7 @@ body.barber_version .service-wrap p {
 
 body.barber_version .service-wrap img {
     max-width: 400px;
-    margin: 0px;
+    margin: 30px 0px 0px 0px;
 }
 
 body.barber_version .dev-list .widget p {

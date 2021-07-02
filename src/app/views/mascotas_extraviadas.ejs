@@ -77,9 +77,8 @@
 						<li class="nav-item"><a class="nav-link" href="/donaciones">Donaciones</a></li>
 						<li class="nav-item"><a class="nav-link" href="/sobre_nosotros">Sobre nosotros</a></li>
 						<li class="nav-item active"><a class="nav-link" href="/mascotas_extraviadas">Mascotas extraviadas</a></li>
-						
 						<% if (login) { %>
-							<li class="nav-item"><a class="nav-link" href="#"><%=nombre%></a></li>
+							<li class="nav-item"><a class="nav-link" href=""><%=nombre%></a></li>
 							<li class="nav-item"><a class="nav-link" href="/logout">Cerrar sesión</a></li>
 						<% } else { %>
 							<li class="nav-item"><a class="nav-link" href="/login2">Iniciar Sesion</a></li>
@@ -87,9 +86,8 @@
 						
 						<% } %>
 							<% if (rol=="administrador") {%>
-						<li class="nav-item"><a class="nav-link" href="/peticiones">Peticiones</a></li>
+						<li class="nav-item"><a class="nav-link" href="peticiones">Peticiones</a></li>
 						<% } %>
-
 					</ul>
 				</div>
 			</div>
@@ -145,12 +143,15 @@
 						<div class="service-wrap text-center lastchild clearfix">
 								<% for (let i = 0; i < mascotas.length; i++) { %>
 								<div class="contenedor">
-							<div class="fotos">
-								<img src="<%= mascotas[i].foto_mascota %>">
-									</div>
+							
 									<h2 class="titulo3-name">
 										<strong><%= mascotas[i].nombre_mascota %></strong>
 									</h2>
+
+									<div class="fotos">
+										<img src="<%= mascotas[i].foto_mascota %>">
+									</div>
+
 									<h2 class="titulo3">
 										<p><strong>Raza</strong></p>
 										<%= mascotas[i].raza_mascota %>
@@ -178,10 +179,10 @@
 								<% if (rol == "administrador") {%>
 							
 
-								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalBorrar<%= mascotas[i].id_mascota_extraviada %>">X</button>
+								<button type="button" class="btn btn-danger" style="margin: 0px 0px 30px 0px;" data-toggle="modal" data-target="#ModalBorrar<%= mascotas[i].id_mascota_extraviada %>">Eliminar a <%=mascotas[i].nombre_mascota%></button>
 
 
-								<div class="modal fade" id="ModalBorrar<%= mascotas[i].Id_mascota_extraviada %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal fade" id="ModalBorrar<%= mascotas[i].id_mascota_extraviada %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  								<div class="modal-dialog" role="document">
 	    								<div class="modal-content">
 	      									<div class="modal-header">
@@ -191,11 +192,11 @@
 	        										</button>
 	      									</div>
 	      									<div class="modal-body">
-	      										¿Realmente quieres borrar a <%=mascotas[i].nombre_mascota%>? este cambio es permanente
+	      										¿Realmente quieres eliminar a <%=mascotas[i].nombre_mascota%>? este cambio es permanente
 	      									</div>
 	      									<div class="modal-footer">
 	        									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-	           									<a href="delete/<%=mascotas[i].id_mascota_extraviada %>" class="btn btn-primary">Aceptar</a>
+	           									<a href="delete2/<%=mascotas[i].id_mascota_extraviada %>" class="btn btn-danger">Aceptar</a>
 				      						</div>
 									   </div>
 									 </div>

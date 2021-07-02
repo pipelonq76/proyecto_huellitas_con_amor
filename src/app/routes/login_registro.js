@@ -10,7 +10,7 @@ module.exports= app => {
 	app.get('/', (req,res) => {
 	
 
-		if (req.session.loggedin || req.session.loggedinAdmin){
+		if (req.session.loggedin){
 		
 			res.render('../views/index.ejs', {
 				login:true,
@@ -23,7 +23,7 @@ module.exports= app => {
 		} else {
 			res.render('../views/index.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion",
+				nombre: "Iniciar sesion",
 				rol: ""
 			});
 		}
@@ -33,7 +33,7 @@ module.exports= app => {
 		app.get('/sobre_nosotros', (req,res) => {
 	
 
-		if (req.session.loggedin || req.session.loggedinAdmin){
+		if (req.session.loggedin){
 		
 			res.render('../views/sobre_nosotros.ejs', {
 				login:true,
@@ -47,7 +47,7 @@ module.exports= app => {
 		} else {
 			res.render('../views/sobre_nosotros.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion",
+				nombre: "Iniciar sesion",
 				rol: ""
 			});
 		}
@@ -57,7 +57,7 @@ module.exports= app => {
 		app.get('/login2', (req,res) => {
 	
 
-		if (req.session.loggedin || req.session.loggedinAdmin){
+		if (req.session.loggedin){
 		
 			res.render('../views/login2.ejs', {
 				login:true,
@@ -70,7 +70,7 @@ module.exports= app => {
 		} else {
 			res.render('../views/login2.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion"
+				nombre: "Iniciar sesion"
 			});
 		}
 		
@@ -97,7 +97,7 @@ app.get('/adopta', (req,res) => {
 			connection.query("SELECT * FROM mascotas", (err, results) => {
 				res.render('../views/adopta.ejs', {
 				login:false,
-				nombre: "ingrese por favor",
+				nombre: "Iniciar sesion",
 				adopcion: results,
 				rol: ""
 			});
@@ -125,9 +125,9 @@ app.get('/formulario_adopcion_mascota', (req,res) => {
 
 		} else {
 			connection.query("SELECT * FROM mascotas", (err, results) => {
-				res.render('../views/adopta.ejs', {
+				res.render('../views/formulario_adopcion_mascota.ejs', {
 				login:false,
-				nombre: "ingrese por favor",
+				nombre: "Iniciar sesion",
 				adopcion: results,
 				rol: ""
 			});
@@ -138,28 +138,25 @@ app.get('/formulario_adopcion_mascota', (req,res) => {
 
 
 
+
+
 app.get('/formulario_mascotas_extraviadas', (req,res) => {
-	
 
-		if (req.session.loggedin || req.session.loggedinAdmin){
-		
-			res.render('../views/formulario_mascotas_extraviadas.ejs', {
-				login:true,
+		if (req.session.loggedin){
+				res.render('../views/formulario_mascotas_extraviadas.ejs', {
+				login: true,
 				nombre: req.session.nombre,
-				rol: req.session.rol
-				
-
+				rol: req.session.rol,
 			});
-		
+			
 
-		} else {
-			res.render('../views/formulario_mascotas_extraviadas.ejs', {
-				login:false,
-				nombre: "por favor inicie sesion",
-				rol: ""
-			});
+		 } else {			
+				res.render('../views/formulario_mascotas_extraviadas.ejs', {
+				login: false,
+				nombre: "Iniciar sesion",
+				rol: "",
+			});	
 		}
-		
 	})
 
 	app.get('/donaciones', (req,res) => {
@@ -173,7 +170,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		} else {
 			res.render('../views/donaciones.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion",
+				nombre: "Iniciar sesion",
 				rol: ""
 			});
 		}
@@ -200,7 +197,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 			connection.query("SELECT * FROM mascotas_estraviadas", (err, results) => {
 				res.render('../views/mascotas_extraviadas.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion",
+				nombre: "",
 				mascotas: results,
 				rol: ""
 			});
@@ -228,7 +225,35 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 			connection.query("SELECT * FROM adoptante", (err, results) => {
 				res.render('../views/peticiones.ejs', {
 				login:false,
-				nombre: "por favor inicie sesion",
+				nombre: "Iniciar sesion",
+				adoptante: results,
+				rol: ""
+			});
+			})
+			
+		}
+	})
+
+	app.get('/peticiones2', (req,res) => {
+
+		if (req.session.loggedin){
+			connection.query("SELECT * FROM adoptante", (err, results)=>{
+				if(err){
+					res.send(err);
+				} else {
+					res.render('../views/peticiones2.ejs', {
+					login:true,
+					nombre: req.session.nombre,
+					adoptante: results,
+					rol: req.session.rol
+				});
+			}});
+
+		} else {
+			connection.query("SELECT * FROM adoptante", (err, results) => {
+				res.render('../views/peticiones2.ejs', {
+				login:false,
+				nombre: "Iniciar sesion",
 				adoptante: results,
 				rol: ""
 			});
@@ -248,7 +273,8 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 					res.render('../views/formulario_adopcion.ejs', {
 					login:true,
 					nombre: req.session.nombre,
-					adopcion: results
+					adopcion: results,
+					rol: req.session.rol
 				});
 			}});
 
@@ -256,8 +282,9 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 			connection.query("SELECT * FROM mascotas", (err, results) => {
 				res.render('../views/formulario_adopcion.ejs', {
 				login:false,
-				nombre: "ingrese por favor",
-				adopcion: results
+				nombre: "Iniciar sesion",
+				adopcion: results,
+				rol: req.session.rol,
 			});
 			})
 			
@@ -280,9 +307,6 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		res.render('../views/adopta.ejs')
 	})
 
-	app.get('/mascotas_extraviadas', (req,res)=>{
-		res.render('../views/mascotas_extraviadas.ejs')
-	})
 
 
 	app.get('/sobre_nosotros', (req,res)=>{
@@ -297,11 +321,12 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		res.render('../views/peticiones.ejs')
 	})
 
-
-
-	app.get('/formulario_mascotas_extraviadas', (req,res)=>{
-		res.render('../views/formulario_mascotas_extraviadas.ejs')
+	app.get('/peticiones2', (req,res)=>{
+		res.render('../views/peticiones2.ejs')
 	})
+
+
+
 
 	app.get('/formulario_adopcion', (req,res)=>{
 		res.render('../views/formulario_adopcion.ejs')
@@ -324,7 +349,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 				res.send(err);
 			}
 			else {
-					res.render('../views/formulario_mascotas_extraviadas.ejs', {
+					res.render('../views/formulario_adopcion.ejs', {
 						alert: true,
 						alertTitle: "La mascota ha sido eliminada satisfactoriamente",
 						alertMessage: "la mascota ha sido eliminada de manera correcta",
