@@ -234,33 +234,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		}
 	})
 
-	app.get('/peticiones2', (req,res) => {
-
-		if (req.session.loggedin){
-			connection.query("SELECT * FROM adoptante", (err, results)=>{
-				if(err){
-					res.send(err);
-				} else {
-					res.render('../views/peticiones2.ejs', {
-					login:true,
-					nombre: req.session.nombre,
-					adoptante: results,
-					rol: req.session.rol
-				});
-			}});
-
-		} else {
-			connection.query("SELECT * FROM adoptante", (err, results) => {
-				res.render('../views/peticiones2.ejs', {
-				login:false,
-				nombre: "Iniciar sesion",
-				adoptante: results,
-				rol: ""
-			});
-			})
-			
-		}
-	})
+	
 
 
 	app.get('/formulario_adopcion', (req,res) => {
@@ -321,10 +295,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		res.render('../views/peticiones.ejs')
 	})
 
-	app.get('/peticiones2', (req,res)=>{
-		res.render('../views/peticiones2.ejs')
-	})
-
+	
 
 
 
