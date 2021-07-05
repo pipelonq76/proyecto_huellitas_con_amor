@@ -77,22 +77,22 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 						<li class="nav-item active"><a class="nav-link" href="/adopta">Adopta</a></li>
 						<li class="nav-item"><a class="nav-link" href="/donaciones">Donaciones</a></li>
 						<li class="nav-item"><a class="nav-link" href="/sobre_nosotros">Sobre nosotros</a></li>
 						<li class="nav-item"><a class="nav-link" href="/mascotas_extraviadas">Mascotas extraviadas</a></li>
+								<% if (rol=="administrador") {%>
+						<li class="nav-item"><a class="nav-link" href="peticiones">Peticiones</a></li>
+						<% } %>
 						<% if (login) { %>
-							<li class="nav-item"><a class="nav-link" href="#"><%=nombre%></a></li>
+							<li class="nav-item"><a class="nav-link" href=""><%=nombre%></a></li>
 							<li class="nav-item"><a class="nav-link" href="/logout">Cerrar sesión</a></li>
 						<% } else { %>
 							<li class="nav-item"><a class="nav-link" href="/login2">Iniciar Sesion</a></li>
 							<li class="nav-item"><a class="nav-link" href="/registro">Registro</a></li>
+						
 						<% } %>
-						<% if (rol=="administrador") {%>
-						<li class="nav-item"><a class="nav-link" href="/peticiones">Peticiones</a></li>
-						<% } %>
-
 					</ul>
 				</div>
 			</div>
@@ -142,15 +142,15 @@
 			</div><!-- end issue -->
 		</div><!-- end title -->
 			
-						<div class="service-wrap text-center lastchild clearfix">
+						<div class="service-wrap text-center lastchild clearfix" style="margin: -60px 80px 0px 80px">
 								<% for (let i = 0; i < adopcion.length; i++) { %>
 								<div class="contenedor">
 						
 								
 								<h2 class="titulo3-name"><strong><%= adopcion[i].nombre_mascota %></strong></h2>
 
-									<div class="container">
-									<img src="<%= adopcion[i].foto_mascota %>"> 
+									<div class="fotos">
+									<img class="imagen" src="<%= adopcion[i].foto_mascota %>"> 
 								</div>
 								
 								<h2 class="titulo3">
@@ -199,7 +199,7 @@
 								<% if (login) { %>
 								<a class="btn btn-light btn-radius btn-brd grd1 effect-1" href="/formulario_adopcion_mascota">Adoptar a <%= adopcion[i].nombre_mascota %></a>
 								<% } else { %>
-					<a class="btn btn-light btn-radius btn-brd grd1 effect-1" style="margin: 0px 0px 30px 0px;" href="/login2">Inicia sesion para adoptar a <%=adopcion[i].nombre_mascota%></a>
+					<a class="btn btn-light btn-radius btn-brd grd1 effect-1 ml-auto" style="margin: 0px 0px 30px 0px;" href="/login2">Inicia sesion para adoptar a <%=adopcion[i].nombre_mascota%></a>
 					<% } %>
 									</div>
 									<% } %>

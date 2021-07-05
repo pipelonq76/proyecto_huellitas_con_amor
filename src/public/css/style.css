@@ -379,11 +379,11 @@ a img.aligncenter {
 
 
 .navbar-light .navbar-toggler{
-	padding: 5px 10px 10px;
+	padding: 5px 4px 10px 10px;
 	margin: 0 0 0 10px;
 	position: relative;
 	border-radius: 2px;
-	border-color: rgba(0,0,0,.5);
+	border-color: white;
 	z-index: 9999;
 }
 .navbar-toggler .icon-bar {
@@ -394,11 +394,11 @@ a img.aligncenter {
 }
 
 .navbar-toggler .icon-bar {
-	background: #010101;
+	background: red;
 	transition: all 0.2s;
 	width: 0 auto;
 	width: 25px;
-	margin-top: 5px;
+    margin: 5px 3px 0px 0px;
 }
 
 .navbar-toggler .icon-bar:hover {

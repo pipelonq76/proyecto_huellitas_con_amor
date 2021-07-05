@@ -9,13 +9,19 @@
 	border-width: 10px;
 	border-color: black;
 	border-style: solid;
-	background-color: #ff4d4d;
+	background-color: #e66767;
 
 }
 
 .label {
 	font-size: 20px;
 	font-family: titulo3;
+}
+
+.imagen {
+	border-style: solid;
+	border-color: black; 
+	border-width: 10px;
 }
 
 
@@ -34,8 +40,9 @@
 .titulo3-name {
 	font-family: titulo3;
 	font-size: 40px;
-	margin: 30px;
+	margin: 10px 0px -15px 0px;
 }
+
 @font-face{
 	font-family: titulo;
 	src: url("../fonts/Ananda Personal Use.ttf");
