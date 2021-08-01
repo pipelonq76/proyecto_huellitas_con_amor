@@ -7,22 +7,22 @@ const conexion_bd = {
 }
 
 function handleDisconnect(conexion_bd){
-	connection= mysql.createPool(conecion_bd);
+	connection = mysql.createPool(conexion_bd);
 
 
 	connection.getConnection(function(error){
-		if(err){
+		if(error){
 			console.log('error en la conexion de bases de datos:', error);
 			setTimeout(handleDisconnect, 2000);
 		}
 	});
 
-	connection.on('err', function(error){
+	connection.on('error', function(error){
 		console.log('db error', error);
 		if (error.code === 'PROTOCOL_CONNECTION_LOST') {
 			handleDisconnect();
 		} else {
-			throw err;
+			throw error;
 		}
 	});
 	}
