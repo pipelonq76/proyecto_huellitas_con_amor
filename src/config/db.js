@@ -1,8 +1,9 @@
 const mysql=require('mysql');
 const connection = mysql.createConnection({
-	host : process.env.DB_HOST,
-	user : process.env.DB_USER,
-	database : process.env.DB_DATABASE
+	host : "us-cdbr-east-04.cleardb.com",
+	user : "b8ecdce97e031d",
+	database : "heroku_061e30f49b88c2b"
+	password : "a9e4bfcd"
 })
 
 connection.connect((error)=>{
