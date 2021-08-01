@@ -6,12 +6,24 @@ const connection = mysql.createConnection({
 	password : "a9e4bfcd",
 })
 
-connection.connect((error)=>{
-	if(error){
-		console.log("este error se presenta " + error)
-		return;
-	}
-	console.log("conectados exitosamente a la base de datos")
-})
+function handleDisconnect(conexion_bd){
+	connection= mysql.createPool(conecion_bd);
 
-module.exports=connection;
+
+	connection.getConnection(function(error){
+		if(err){
+			console.log('error en la conexion de bases de datos:', error);
+			setTimeout(handleDisconnect, 2000);
+		}
+	});
+
+	connection.on('err', function(error){
+		console.log('db error', error);
+		if (error.code === 'PROTOCOL_CONNECTION_LOST') {
+			handleDisconnect();
+		} else {
+			throw err;
+		}
+	});
+	}
+handleDisconnect(conexion_bd);
