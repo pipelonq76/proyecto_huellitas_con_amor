@@ -1,10 +1,10 @@
 const mysql=require('mysql');
-const connection = mysql.createConnection({
+const conexion_bd = {
 	host : "us-cdbr-east-04.cleardb.com",
 	user : "b8ecdce97e031d",
 	database : "heroku_061e30f49b88c2b",
 	password : "a9e4bfcd",
-})
+}
 
 function handleDisconnect(conexion_bd){
 	connection= mysql.createPool(conecion_bd);
