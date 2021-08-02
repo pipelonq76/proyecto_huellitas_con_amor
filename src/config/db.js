@@ -1,9 +1,9 @@
 const mysql=require('mysql');
 const conexion_bd = {
-	host : process.env.DB_HOST,
-	user : process.env.DB_USER,
-	database : process.env.DB_DATABASE,
-	password : process.env.DB_PASSWORD,
+	host : "us-cdbr-east-04.cleardb.com",
+	user : "b8ecdce97e031d",
+	database : "a9e4bfcd",
+	password : "heroku_061e30f49b88c2b",
 };
 
 function handleDisconnect(conexion_bd){
@@ -13,7 +13,7 @@ function handleDisconnect(conexion_bd){
 	connection.getConnection(function(error){
 		if(error){
 			console.log('error en la conexion de bases de datos:', error);
-			setTimeout(handleDisconnect, 2000);
+			setTimeout(handleDisconnect, 3000);
 		}
 	});
 
