@@ -13,7 +13,7 @@ function handleDisconnect(conexion_bd){
 	connection.getConnection(function(error){
 		if(error){
 			console.log('error en la conexion de bases de datos:', error);
-			setTimeout(handleDisconnect, 3000);
+			setTimeout(handleDisconnect, 2000);
 		}
 	});
 
