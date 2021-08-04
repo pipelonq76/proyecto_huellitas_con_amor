@@ -440,7 +440,6 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 	app.post('/formulario_mascotas_extraviadas', async(req,res) => {
 		const {input_documento_dueño, input_nombre_dueño, email_dueño_mascota, telefono_dueño_mascota, direccion_dueño_mascota, nombre_mascota, input_fecha_de_nacimiento_mascota, raza_mascota, sexo_mascota, input_foto_mascota} = req.body;
 		console.log(req.body);
-		console.log(input_documento_dueño);
 		if (validacion===false){
 			connection.query ("INSERT INTO mascotas_estraviadas SET ?", {
 				documento_dueño_mascota: input_documento_dueño,
