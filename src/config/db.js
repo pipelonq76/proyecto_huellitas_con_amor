@@ -4,7 +4,7 @@ const conexion_bd = {
 	host : "us-cdbr-east-04.cleardb.com",
 	user : "b7e94cd0a32586",
 	database : "heroku_0ab8e33baab2681",
-	password : "b7e94cd0a32586",
+	password : "b125b691",
 };
 
 
