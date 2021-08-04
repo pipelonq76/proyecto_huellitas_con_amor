@@ -2,9 +2,9 @@ const mysql=require('mysql');
 
 const conexion_bd = {
 	host : "us-cdbr-east-04.cleardb.com",
-	user : "b8ecdce97e031d",
-	database : "heroku_061e30f49b88c2b",
-	password : "a9e4bfcd",
+	user : "b7e94cd0a32586",
+	database : "heroku_0ab8e33baab2681",
+	password : "b7e94cd0a32586",
 };
 
 
