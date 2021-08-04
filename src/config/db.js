@@ -1,10 +1,10 @@
 const mysql=require('mysql');
 
 const conexion_bd = {
-	host : "us-cdbr-east-04.cleardb.com",
-	user : "b8ecdce97e031d",
-	database : "heroku_061e30f49b88c2b",
-	password : "a9e4bfcd",
+	host : DB_HOST,
+	user : DB_USER,
+	database : DB_DATABASE,
+	password : DB_PASSWORD,
 };
 
 
