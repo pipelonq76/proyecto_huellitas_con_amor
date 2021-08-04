@@ -442,11 +442,11 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 		console.log(req.body);
 		if (validacion===false){
 			connection.query ("INSERT INTO mascotas_estraviadas SET ?", {
-				documento_dueño_mascota: input_documento_dueño,
-				nombre_dueño_mascota: input_nombre_dueño,
-				correo_dueño_mascota: email_dueño_mascota,
-				telefono_dueño_mascota: telefono_dueño_mascota,
-				direccion_dueño_mascota: direccion_dueño_mascota,
+				documento_dueno_mascota: input_documento_dueño,
+				nombre_dueno_mascota: input_nombre_dueño,
+				correo_dueno_mascota: email_dueño_mascota,
+				telefono_dueno_mascota: telefono_dueño_mascota,
+				direccion_dueno_mascota: direccion_dueño_mascota,
 				nombre_mascota: nombre_mascota,
 				fecha_nacimiento_mascota: input_fecha_de_nacimiento_mascota,
 				raza_mascota: raza_mascota,
