@@ -1,7 +1,7 @@
 const mysql=require('mysql');
 
 const conexion_bd = {
-	host : DB_HOST,
+	host : HOST,
 	user : DB_USER,
 	database : DB_DATABASE,
 	password : DB_PASSWORD,
