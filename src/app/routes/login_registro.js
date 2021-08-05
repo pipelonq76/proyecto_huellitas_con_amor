@@ -374,7 +374,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 	})
 
 
-	/registro usuario
+	//registro usuario
 	app.post('/registro', async(req,res) => {
 		const {input_documento, input_fecha_de_nacimiento, firstName, email, direccion, pass, phone, pass1, input_rol} = req.body;
 		console.log(req.body);
