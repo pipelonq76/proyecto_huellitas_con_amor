@@ -374,16 +374,12 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 	})
 
 
-
-	//registro usuario
 	app.post('/registro', async(req,res) => {
-		const {input_documento, input_fecha_de_nacimiento, firstName, email, direccion, pass, phone, pass1, input_rol} = req.body;
+		const {input_documento, input_fecha_de_nacimiento, firstName, email, direccion, pass, phone, pass1,input_rol} = req.body;
 		console.log(req.body);
+		console.log(input_documento);
 		let inputReContrasena = await bcryptjs.hash(pass, 8);
-		connection.query("SELECT * FROM usuario WHERE documento = ?", [input_documento], (err,results)=>{
-			if (results.length===0 & validacion===false){
-				
-
+		if (validacion===false){
 			connection.query ("INSERT INTO usuario SET ?", {
 				documento: input_documento,
 				nombre: firstName,
@@ -393,39 +389,32 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 				direccion: direccion,
 				contrasena: inputReContrasena,
 				rol: input_rol
-
-			},  (err, results)=>{
-				if (err){
-					res.send(err);
-				} else {
+			},  (error, results)=>{
+				if (error){
+					console.log(error);
+				} else{
 					res.render('../views/registro.ejs', {
 						alert: true,
-						alertTitle: "Registracion exitosa",
-						alertMessage: "Bienvenido a huellitas con amor",
+						alertTitle: "Registration",
+						alertMessage: "successful Registration",
 						alertIcon: "success",
-						showConfirmButton: false,
-						timer: 1500,
-						ruta:'/'
-					});
-
-				}
-
-			})
-		
-				} else {
-					res.render('../views/registro.ejs', {
-						alert: true,
-						alertTitle: "Registracion",
-						alertMessage: "error al registrarse",
-						alertIcon: "error",
 						showConfirmButton: false,
 						timer: 1500,
 						ruta:'registro'
 					});
 				}
-				
-	
-			});
+			})	
+		} else {
+				res.render('../views/registro.ejs', {
+						alert: true,
+						alertTitle: "error",
+						alertMessage: "Error al registrarse",
+						alertIcon: "error",
+						showConfirmButton: false,
+						timer: 1500,
+						ruta:'registro'
+					});
+			};
 		});	
 
 
