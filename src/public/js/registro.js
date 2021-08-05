@@ -1,4 +1,5 @@
 var contrasenas=[]
+var contrasenas=[]
 var correos=[]
 var firstNames=[]
 var lastNames=[]
@@ -70,37 +71,43 @@ function compararContrasena()
 	}
 }
 
-
-function tamañoContrasena(){
-	var getContrasena=document.getElementById("inputContrasena")
-	var contrasena=getContrasena.value
-	if (contrasena.length>8){
-		return true
-	}
-	else {
-		alert("la contraseña es muy corta")
+function compararCorreo()
+{
+	var getCorreo=document.getElementById('inputCorreo')
+	if (correos.includes(getCorreo.value))
+	{
+		alert("El correo ya esta registrado")
 		return false
 	}
+	else 
+	{
+		return true
+	}
 }
-
-
 
 
 
 function validarDatos()
 {
-	
-	if (validarCorreo() && compararContrasena() && tamañoContrasena())
+	var getContrasena=document.getElementById('inputContrasena')
+	var getReContrasena=document.getElementById('inpuReContrasena')
+	var getCorreo=document.getElementById('inputCorreo')
+	if (validarCorreo() && compararContrasena() && compararCorreo())
 	{
+		var name1=document.getElementById('firstName')
+		var name2=document.getElementById('lastName')
+		var getphone=document.getElementById('phone')
+		correos.push(getCorreo.value)
+		contrasenas.push(getContrasena.value)
+		firstNames.push(name1.value)
+		lastNames.push(name2.value)
+		phones.push(getphone.value)
 
-		validacion=true
-		
 
 	}
-	
+	var datos=[firstNames,lastNames,correos,contrasenas,phones]
+	console.log(datos)
 }
-
-export default validarDatos;
 
 
 
