@@ -376,7 +376,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 
 	//registro usuario
 	app.post('/registro', async(req,res) => {
-		const {input_documento, input_fecha_de_nacimiento, firstName, email, direccion, pass, phone, pass1, input_rol} = req.body;
+		const {input_documento, input_fecha_de_nacimiento, firstName, email, direccion, pass, phone, pass1} = req.body;
 		console.log(req.body);
 		let inputReContrasena = await bcryptjs.hash(pass, 8);
 		connection.query("SELECT * FROM usuario WHERE documento = ?", [input_documento], (err,results)=>{
@@ -391,7 +391,7 @@ app.get('/formulario_mascotas_extraviadas', (req,res) => {
 				fecha_de_nacimiento: input_fecha_de_nacimiento,
 				direccion: direccion,
 				contrasena: inputReContrasena,
-				rol: input_rol
+				rol: "usuario"
 
 			},  (err, results)=>{
 				if (err){
