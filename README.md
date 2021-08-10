@@ -78,7 +78,7 @@
 						<li class="nav-item"><a class="nav-link" href="/donaciones">Donaciones</a></li>
 						<li class="nav-item"><a class="nav-link" href="/sobre_nosotros">Sobre Nosotros</a></li>
 						<li class="nav-item"><a class="nav-link" href="/mascotas_extraviadas">Mascotas Extraviadas</a></li>
-								<% if (rol=="administrador") {%>
+								
 						<li class="nav-item"><a class="nav-link" href="peticiones">Peticiones</a></li>
 						<% } %>
 						<% if (login) { %>
