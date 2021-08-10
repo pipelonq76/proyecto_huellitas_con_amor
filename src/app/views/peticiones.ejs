@@ -56,7 +56,7 @@
 
 	<div class="top-add alert alert-light alert-dismissible">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		<strong>Bienvenido!</strong> a huellitas con amor.
+		<strong>¡Bienvenido!</strong> a Huellitas con Amor.
 	</div>
     <!-- Start header -->
 	<header class="top-navbar">
@@ -75,8 +75,8 @@
 					<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link" href="/adopta">Adopta</a></li>
 						<li class="nav-item"><a class="nav-link" href="/donaciones">Donaciones</a></li>
-						<li class="nav-item"><a class="nav-link" href="/sobre_nosotros">Sobre nosotros</a></li>
-						<li class="nav-item"><a class="nav-link" href="/mascotas_extraviadas">Mascotas extraviadas</a></li>
+						<li class="nav-item"><a class="nav-link" href="/sobre_nosotros">Sobre Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/mascotas_extraviadas">Mascotas Extraviadas</a></li>
 								<% if (rol=="administrador") {%>
 						<li class="nav-item active"><a class="nav-link" href="peticiones">Peticiones</a></li>
 						<% } %>
@@ -125,7 +125,7 @@
 			<div class="container">
 				<div class="section-title row text-center">
 					<div class="col-md-8 offset-md-2">
-					<small>Bienvenido a huellitas con amor</small>
+					<small>¡Bienvenido a Huellitas con Amor!</small>
 					<h3>Encuentra a tu amigo peludo</h3>
 					<hr class="grd1">
 					<p class="lead">Reconcilia a tu familia, encuentra a tu compañero perdido</p>
@@ -147,7 +147,7 @@
 										<%= adoptante[i].nombre_adoptante %>
 									</h2>
 									<h2 class="titulo3">
-										<p><strong>Telefono</strong></p>
+										<p><strong>Teléfono</strong></p>
 										<%= adoptante[i].telefono_adoptante %>
 									</h2>
 									<h2 class="titulo3">
@@ -156,7 +156,7 @@
 									</h2>
 
 									<h2 class="titulo3">
-										<p><strong>Correo electronico</strong></p>
+										<p><strong>Correo electrónico</strong></p>
 										<%= adoptante[i].correo_electronico_adoptante %><br>
 									</h2>
 
@@ -167,7 +167,7 @@
 									</h2>
 
 									<h2 class="titulo3">
-										<p><strong>Direccion del adoptante</strong></p>
+										<p><strong>Dirección del adoptante</strong></p>
 										<%= adoptante[i].direccion_adoptante %><br>
 									</h2>
 
@@ -195,14 +195,7 @@
 										<p><strong>Nombre de la mascota a adoptar</strong></p>
 										<%= adoptante[i].nombre_mascota %><br>
 									</h2>
-									
-
-
-
-
-
-
-
+				
 								<% if (rol == "administrador") {%>
 
 								<button type="button" class="btn btn-danger" style="margin: 0px 0px 30px 0px;" data-toggle="modal" data-target="#ModalBorrar<%=adoptante[i].id_adoptante %>">Eliminar peticion</button>
@@ -211,13 +204,13 @@
 	  								<div class="modal-dialog" role="document">
 	    								<div class="modal-content">
 	      									<div class="modal-header">
-	        									<h5 class="modal-title" id="exampleModalabel">Advertencia</h5>
+	        									<h5 class="modal-title" id="exampleModalabel">¡Advertencia!</h5>
 	        										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          											<span aria-hidden="true">&times;</span>
 	        										</button>
 	      									</div>
 	      									<div class="modal-body">
-	      										¿Realmente quieres borrar la peticion de <%=adoptante[i].nombre_adoptante%>? este cambio es permanente
+	      										¿Realmente quieres borrar la peticion de <%=adoptante[i].nombre_adoptante%>? este cambio es permanente.
 	      									</div>
 	      									<div class="modal-footer">
 	        									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -243,15 +236,7 @@
 			<div class="container">
 				<div class="footer-distributed">
 					<div class="footer-left">
-						<p class="footer-links">
-							<a href="#">Home</a>
-							<a href="#">Blog</a>
-							<a href="#">Pricing</a>
-							<a href="#">About</a>
-							<a href="#">Faq</a>
-							<a href="#">Contact</a>
-						</p>
-						<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Huellitas con amor</a> Design By : <a href="https://html.design/">html design</a></p>
+						<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">Huellitas con Amor</a> Design By : <a href="https://html.design/">html design</a></p>
 					</div>
 				</div>
 			</div><!-- end container -->
