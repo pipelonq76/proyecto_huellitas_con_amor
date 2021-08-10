@@ -30,11 +30,6 @@ module.exports= app => {
 		
 	})
 
-	app.get('*', function(req, res){
-  console.log('404ing');
-  res.render('404');
-});
-
 		app.get('/sobre_nosotros', (req,res) => {
 	
 
