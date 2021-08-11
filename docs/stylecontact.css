@@ -12,7 +12,7 @@
     IMPORT FILES
 -------------------------------------------------------------------*/
 
-@import url(/resources/css/style.css);
+@import url(/resources/css/animate.css);
 @import url(/resources/css/animate.min.css);
 @import url(/resources/css/loading.css);
 @import url(/resources/css/bootstrap-select.css);
@@ -270,15 +270,15 @@ a img.aligncenter {
 
 /* Text meant only for screen readers. */
 
-.screen-reader-text {
+/* .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
     height: 1px;
     width: 1px;
     overflow: hidden;
-}
+} */
 
-.screen-reader-text:focus {
+/* .screen-reader-text:focus {
     background-color: #f1f1f1;
     border-radius: 3px;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -297,7 +297,7 @@ a img.aligncenter {
     width: auto;
     z-index: 100000;
     /* Above WP toolbar. */
-}
+} */
 
 .mus{
 	
@@ -308,7 +308,7 @@ a img.aligncenter {
 -------------------------------------------------------------------*/
 
 .top-add{
-	background: #ed2d46;
+	background: black;
 	border: none;
 	border-radius: 0px;
 	color: #ffffff;
@@ -320,7 +320,7 @@ a img.aligncenter {
     z-index: 10;
 }
 
-.top-navbar .navbar {
+/* .top-navbar .navbar {
     padding: 15px 0px;
     width: 100%;
 	-webkit-box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
@@ -329,13 +329,13 @@ a img.aligncenter {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     z-index: 100;
-}
+} */
 
 .top-navbar.fixed-menu{
-	position: fixed;
+	position: relative;
 	width: 100%;
 	top: 0;
-	-webkit-box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0px 0px 18px 1px rgba(223, 17, 17, 0.1);
 	box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.1);
     transition: height .3s ease-out, background .3s ease-out, box-shadow .3s ease-out;
     -webkit-transform: translate3d(0, 0, 0);
@@ -345,25 +345,25 @@ a img.aligncenter {
 .top-navbar .navbar-light .navbar-nav .nav-link{
 	position: relative;
 	padding: 10px 20px;
-	color: #ffffff;
+	color:#ffffff;
 }
 .top-navbar .navbar-light .navbar-nav .nav-link::after {
 	content: "";
-    background: #ed2d46;
+    background: red;
     z-index: -1;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     position: absolute;
     bottom: 0;
     left: 0;
 	border-radius: 0px 50px 0px 0px; 
-    transition: .3s linear;
+    transition: .2s linear;
 }
 .top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link{
 	font-weight: 700;
 }
 .top-navbar .navbar-light .navbar-nav .nav-item{	
-	background: #010101;
+	background: black;
 	position: relative;
 	z-index: 0;
 }
@@ -379,11 +379,11 @@ a img.aligncenter {
 
 
 .navbar-light .navbar-toggler{
-	padding: 5px 4px 10px 10px;
+	padding: 5px 10px 10px;
 	margin: 0 0 0 10px;
 	position: relative;
 	border-radius: 2px;
-	border-color: white;
+	border-color: rgba(0,0,0,.5);
 	z-index: 9999;
 }
 .navbar-toggler .icon-bar {
@@ -394,16 +394,16 @@ a img.aligncenter {
 }
 
 .navbar-toggler .icon-bar {
-	background: red;
+	background: #010101;
 	transition: all 0.2s;
 	width: 0 auto;
 	width: 25px;
-    margin: 5px 3px 0px 0px;
+	margin-top: 5px;
 }
-
+/* 
 .navbar-toggler .icon-bar:hover {
 	background: #ed2d4;
-}
+} */
 
 
 
@@ -427,21 +427,21 @@ a img.aligncenter {
     vertical-align: middle;
 }
 
-.slider-01{
-	background: url(/resources/images/imageAdopta.jpeg) no-repeat center;
+/* .slider-01{
+	background: url(uploads/slider-img-01.jpg) no-repeat center;
 	background-size: cover;
 	height: 100vh;
-}
-.slider-02{
-	background: url(/resources/images/estraviado5.jpg) no-repeat center;
+} */
+/* .slider-02{
+	background: url(uploads/slider-img-02.jpg) no-repeat center;
 	background-size: cover;
 	height: 100vh;
-}
-.slider-03{
-	background: url(/resources/images/estraviado2.jpg) no-repeat center;
+} */
+/* .slider-03{
+	background: url(uploads/slider-img-03.jpg) no-repeat center;
 	background-size: cover;
 	height: 100vh;
-}
+} */
 
 .item.slider-01{
 	
@@ -905,7 +905,7 @@ a img.aligncenter {
 }
 
 .parallax-inner-bg{
-	background: url(/resources/uploads/parallax_20.jpg) no-repeat top center;
+	/* background: url(uploads/parallax_20.jpg) no-repeat top center; */
 	background-size: cover;
 	background-attachment: fixed;
 }
@@ -1239,7 +1239,7 @@ body.barber_version .about-tab .nav-pills > li a:hover{
 }
 
 .message-box{
-	background: url(/resources/images/imagen_transpa.jpg) no-repeat center;
+	background: url(/resources/uploads/about-bg.jpg) no-repeat center;
 	background-size: cover;
 	padding: 40px 0px;
 }
@@ -1274,7 +1274,6 @@ body.barber_version .about-tab .nav-pills > li a:hover{
     font-style: normal;
     color: #ed2d46;
     padding-bottom: 0;
-    font-family: ef
 }
 
 .right-box{}
@@ -1988,9 +1987,9 @@ select.mobile-device {
     color: #bcbcbc;
 }
 
-#contact {
-    background: url(/resources/images/bg.png) no-repeat center center #fff;
-}
+/* #contact {
+    background: url(images/bg.png) no-repeat center center #fff;
+} */
 
 
 /*------------------------------------------------------------------
@@ -2358,7 +2357,7 @@ select.mobile-device {
 -------------------------------------------------------------------*/
 
 .all-page-bar{
-	background: url("/resources/images/image2.jpg") no-repeat center;
+	background: url("/resources/images/adoptar.png") no-repeat center;
 	background-size: cover;
 	position: relative;
 }
@@ -2406,6 +2405,21 @@ select.mobile-device {
 
 .much{
 	margin-bottom: 10px;
+}
+
+body.barber_version .service-wrap:hover .uptop{
+	transform: scale(1.07);
+	transition: all 1s ease-in-out;
+	z-index: 1;
+}
+
+body.barber_version .service-wrap:hover .uptop img{
+	border-radius: 100%;
+	transition: all 1s ease-in-out;
+}
+
+.uptop img{
+	transition: all 1s ease-in-out;
 }
 
 .hover-br{
@@ -2491,18 +2505,21 @@ body.barber_version .dev-list .widget:hover .hover-br .social-up-hover .footer-s
 	display: inline-block;
 	margin: auto;
 	padding: 10px;
+	transition: all 1s ease-in-out;
+	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
 }
 
 .form-btn{
 	padding: 0 15px;
 }
 
-#map {
+/* #map {
     width: 100%;
     height: 650px;
     margin-top: 40px;
     margin-bottom: 40px;
-}
+} */
 
 
 .card {
@@ -2601,12 +2618,7 @@ body.barber_version .dev-list .widget:hover .hover-br .social-up-hover .footer-s
 	color: #010101 !important;
 }
 
-.mascotas {
-    background-color: #ffb8b8;
-}
 
-.paypal {
 
-}
 
 
