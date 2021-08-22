@@ -1,8 +1,6 @@
 .fotos {
 	padding-top: 0px;
 	margin: 0px;
-	max-width: 300px;
-	max-height: 300px
 
 }
 .contenedor {
@@ -11,7 +9,7 @@
 	border-width: 10px;
 	border-color: black;
 	border-style: solid;
-	background-color: #e66767
+	background-color: #e66767;
 
 }
 
