@@ -1,6 +1,8 @@
 .fotos {
 	padding-top: 0px;
 	margin: 0px;
+	max-width: 800px;
+	max-height: 900px;
 
 }
 .contenedor {
